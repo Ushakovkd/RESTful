@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <File name="File" fileName="AudioProject.log" immediateFlush="true" append="true">
+            <PatternLayout>
+                <pattern>[%-5level] %d{dd-MM-yyyy HH:mm:ss.SSS} %c{1} -> %msg%n</pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+    <Loggers>
+        <logger name="org.hibernate.SQL" level="debug" additivity="false">
+            <appender-ref ref="File"/>
+        </logger>
+        <logger name="org.hibernate.type.descriptor.sql" level="trace" additivity="false">
+            <appender-ref ref="File"/>
+        </logger>
+        <Root level="debug">
+            <appender-ref ref="File" />
+        </Root>
+    </Loggers>
+</Configuration>
